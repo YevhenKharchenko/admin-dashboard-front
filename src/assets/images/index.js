@@ -1,0 +1,9 @@
+export { default as pill } from './white-round-pill.webp';
+export { default as pill2x } from './white-round-pill@2x.webp';
+export { default as pillTab } from './white-round-pill-tab.webp';
+export { default as pillTab2x } from './white-round-pill-tab@2x.webp';
+export { default as elements } from './elements.webp';
+export { default as elements2x } from './elements@2x.webp';
+export { default as elementsTab } from './elements-tab.webp';
+export { default as elementsTab2x } from './elements-tab@2x.webp';
+export { default as logo } from './logo.webp';

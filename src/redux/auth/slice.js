@@ -8,13 +8,8 @@ const authSlice = createSlice({
     user: {
       name: null,
       email: null,
-      avatar: '',
-      phone: '',
+      token: null,
     },
-    pets: [],
-    favorites: [],
-    views: [],
-    token: null,
     isLoggedIn: false,
     isRefreshing: false,
     error: null,
@@ -24,11 +19,7 @@ const authSlice = createSlice({
       state.isRefreshing = false;
       state.isLoggedIn = false;
       state.error = null;
-      state.user = { name: null, email: null };
-      state.token = null;
-      state.pets = null;
-      state.favorites = null;
-      state.views = null;
+      state.user = { name: null, email: null, token: null };
     },
   },
   extraReducers: builder => {
@@ -38,8 +29,12 @@ const authSlice = createSlice({
         state.isRefreshing = false;
         state.isLoggedIn = true;
         state.error = null;
-        state.user = { name: action.payload.name, email: action.payload.email };
-        state.token = action.payload.token;
+        state.user = {
+          name: action.payload.name,
+          email: action.payload.email,
+          token: action.payload.token,
+        };
+        console.log(action.payload);
       })
       .addCase(loginUser.rejected, handleError)
       .addCase(logoutUser.pending, handleRefreshing)
@@ -47,18 +42,19 @@ const authSlice = createSlice({
         state.isRefreshing = false;
         state.isLoggedIn = false;
         state.error = null;
-        state.user = { name: null, email: null };
-        state.token = null;
-        state.pets = null;
-        state.favorites = null;
-        state.views = null;
+        state.user = { name: null, email: null, token: null };
       })
       .addCase(logoutUser.rejected, handleError)
       .addCase(getCurrentUser.pending, handleRefreshing)
       .addCase(getCurrentUser.fulfilled, (state, action) => {
         state.isRefreshing = false;
+        state.isLoggedIn = true;
         state.error = null;
-        state.favorites = action.payload.noticesFavorites;
+        state.user = {
+          name: action.payload.name,
+          email: action.payload.email,
+          token: action.payload.token,
+        };
       })
       .addCase(getCurrentUser.rejected, handleError);
   },

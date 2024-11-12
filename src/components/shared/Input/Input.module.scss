@@ -1,0 +1,33 @@
+.input {
+  border: 1px solid $primary-grey-color;
+  border-radius: 60px;
+  padding: 13px 18px 13px 18px;
+  width: 100%;
+  height: 44px;
+  font-family: $primary-font-family;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: $primary-input-color;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    border-color: $primary-accent-color;
+  }
+
+  &::placeholder {
+    color: $primary-placeholder-color;
+  }
+
+  @include media(mobile) {
+  }
+
+  @include media(tablet) {
+    font-size: 16px;
+    line-height: 1.25;
+    width: 424px;
+    height: 52px;
+    padding: 16px 76px 16px 16px;
+  }
+}
