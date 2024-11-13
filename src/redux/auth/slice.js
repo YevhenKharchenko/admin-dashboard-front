@@ -34,7 +34,6 @@ const authSlice = createSlice({
           email: action.payload.email,
           token: action.payload.token,
         };
-        console.log(action.payload);
       })
       .addCase(loginUser.rejected, handleError)
       .addCase(logoutUser.pending, handleRefreshing)

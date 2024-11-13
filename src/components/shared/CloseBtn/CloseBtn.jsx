@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { sprite } from '../../assets/icons/index.js';
+import { sprite } from '../../../assets/icons/index.js';
 import s from './CloseBtn.module.scss';
 
 const CloseBtn = ({ handleClick }) => {

@@ -1,23 +1,45 @@
-.main {
+.container {
+  @include media(desktop) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }
 
 .backgroundWrapper {
   padding-top: 24px;
   width: 375px;
   min-height: 812px;
-  margin-left: auto;
-  margin-right: auto;
-
+  margin: 0 auto;
   background-image: url(../../assets/images/white-round-pill.webp),
     url(../../assets/images/elements.webp);
   background-repeat: no-repeat;
   background-position: 240px 160px, bottom 0px right 0px;
   background-size: 95px 93px, 258px 146px;
-  min-height: 812px;
 
   @media (min-resolution: 192dpi) {
-    background-image: url(../../assets//images/white-round-pill@2x.webp),
+    background-image: url(../../assets/images/white-round-pill@2x.webp),
       url(../../assets/images/elements@2x.webp);
+  }
+
+  @include media(tablet) {
+    width: 768px;
+    height: 1024px;
+    background-image: url(../../assets/images/white-round-pill-tab.webp),
+      url(../../assets/images/elements-tab.webp);
+    background-position: 448px 168px, bottom 0px right 0px;
+    background-size: 179px 175px, 266px 263px;
+
+    @media (min-resolution: 192dpi) {
+      background-image: url(../../assets/images/white-round-pill-tab@2x.webp),
+        url(../../assets/images/elements-tab@2x.webp);
+    }
+  }
+
+  @include media(desktop) {
+    width: 1440px;
+    height: 800px;
+    background-position: 516px 190px, bottom 0px right 0px;
+    background-size: 179px 175px, 266px 263px;
   }
 }
 
@@ -26,6 +48,14 @@
   align-items: center;
   gap: 14px;
   margin-bottom: 148px;
+
+  @include media(tablet) {
+    margin-bottom: 204px;
+  }
+
+  @include media(desktop) {
+    margin-bottom: 226px;
+  }
 }
 
 .title {
@@ -35,8 +65,26 @@
   color: $primary-text-color;
 }
 
+.heroWrapper {
+  display: flex;
+  flex-direction: column;
+
+  @include media(desktop) {
+    flex-direction: row;
+    gap: 150px;
+  }
+}
+
 .hero {
   margin-bottom: 40px;
+
+  @include media(tablet) {
+    margin-bottom: 50px;
+  }
+
+  @include media(desktop) {
+    margin-bottom: 0;
+  }
 }
 
 .heroText {
@@ -44,6 +92,12 @@
   font-size: 28px;
   line-height: 1.21429;
   color: $primary-text-color;
+
+  @include media(tablet) {
+    font-size: 54px;
+    line-height: 1.11111;
+    max-width: 614px;
+  }
 }
 
 .heroSpan {

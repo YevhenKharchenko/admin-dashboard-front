@@ -3,11 +3,11 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { loginValidationSchema } from '../../validation/validationSchema.js';
+import { loginUser } from '../../redux/auth/operations.js';
 import Input from '../shared/Input/Input.jsx';
 import PasswordBtn from '../shared/PasswordBtn/PasswordBtn.jsx';
 import Button from '../shared/Button/Button.jsx';
 import s from './LoginForm.module.scss';
-import { loginUser } from '../../redux/auth/operations.js';
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);

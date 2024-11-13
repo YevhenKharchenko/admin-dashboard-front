@@ -10,18 +10,20 @@ const LoginPage = () => {
     <main className={s.main}>
       <ToastContainer />
       <div className={s.backgroundWrapper}>
-        <Container>
+        <Container className={s.container}>
           <NavLink to="/login" className={s.logoWrapper} aria-label="Go to the Home page">
             <img src={logo} alt="Logo" />
             <span className={s.title}>E-Pharmacy</span>
           </NavLink>
-          <section className={s.hero}>
-            <p className={s.heroText}>
-              Your medication, delivered Say goodbye to all{' '}
-              <span className={s.heroSpan}>your healthcare</span> worries with us
-            </p>
-          </section>
-          <LoginForm />
+          <div className={s.heroWrapper}>
+            <section className={s.hero}>
+              <p className={s.heroText}>
+                Your medication, delivered Say goodbye to all{' '}
+                <span className={s.heroSpan}>your healthcare</span> worries with us
+              </p>
+            </section>
+            <LoginForm />
+          </div>
         </Container>
       </div>
     </main>

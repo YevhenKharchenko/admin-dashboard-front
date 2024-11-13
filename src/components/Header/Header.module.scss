@@ -1,0 +1,26 @@
+.header {
+  padding: 17px 0;
+  border-bottom: 1px solid $primary-grey-color;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menuBtn {
+  @include media(desktop) {
+    display: none;
+  }
+}
+
+.menuIcon {
+  stroke: $primary-text-color;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

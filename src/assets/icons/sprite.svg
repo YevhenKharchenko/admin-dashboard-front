@@ -31,9 +31,6 @@
     <symbol id="icon-menu-burger" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8.001h24m-24 8h24m-24 8h24"/>
     </symbol>
-    <symbol id="icon-logo" viewBox="0 0 32 32">
-      <path d="M0 0h32v32H0V0z"/>
-    </symbol>
     <symbol id="icon-logout" viewBox="0 0 32 32">
       <path d="M8.104 2.84a3.945 3.945 0 0 0-3.948 3.948v18.424a3.951 3.951 0 0 0 3.948 3.949H16a3.948 3.948 0 0 0 3.948-3.949V6.788A3.945 3.945 0 0 0 16 2.84H8.104zM21.65 9.805a1.314 1.314 0 0 1 1.86 0l5.264 5.264a1.314 1.314 0 0 1 0 1.86l-5.264 5.264a1.315 1.315 0 0 1-1.861-1.861l3.018-3.018H13.368a1.314 1.314 0 0 1-.931-2.247c.246-.247.582-.385.931-.385h11.299l-3.018-3.018a1.314 1.314 0 0 1 0-1.86z"/>
     </symbol>

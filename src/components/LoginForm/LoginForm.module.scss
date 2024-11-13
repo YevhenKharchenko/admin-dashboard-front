@@ -1,8 +1,15 @@
-.label {
+.form {
+  @include media(desktop) {
+    padding-top: 10px;
+  }
 }
 
 .passwordWrapper {
   position: relative;
+
+  @include media(tablet) {
+    max-width: 323px;
+  }
 }
 
 .errorContainer {
@@ -33,4 +40,8 @@
 
 .btn {
   margin-top: 22px;
+
+  @include media(tablet) {
+    max-width: 323px;
+  }
 }
