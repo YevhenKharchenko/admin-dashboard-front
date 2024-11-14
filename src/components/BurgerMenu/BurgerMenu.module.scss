@@ -7,6 +7,10 @@
   left: 0;
   display: flex;
   flex-direction: column;
+
+  @include media(tablet) {
+    padding: 100px 20px 20px 20px;
+  }
 }
 
 .nav {
@@ -25,10 +29,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include media(tablet) {
+    width: 44px;
+    height: 44px;
+  }
 }
 
 .navIcon {
   fill: $primary-icon-fill-color;
+
+  @include media(tablet) {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 .active > .navIcon {

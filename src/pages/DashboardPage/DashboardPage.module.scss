@@ -1,0 +1,5 @@
+.main {
+  @include media(desktop) {
+    margin-left: 88px;
+  }
+}

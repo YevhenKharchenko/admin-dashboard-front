@@ -8,8 +8,22 @@
   justify-content: center;
   align-items: center;
   margin: auto auto 0 auto;
+
+  @include media(tablet) {
+    width: 44px;
+    height: 44px;
+  }
+
+  @include media(desktop) {
+    margin: 0 0 0 auto;
+  }
 }
 
 .icon {
   fill: $primary-white-color;
+
+  @include media(tablet) {
+    width: 16px;
+    height: 16px;
+  }
 }

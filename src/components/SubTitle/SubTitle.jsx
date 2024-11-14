@@ -1,8 +1,8 @@
 import { useLocation } from 'react-router-dom';
-import s from './SubTitle.module.scss';
-import { getLocationTitle } from '../../utils/getLocationTitle.js';
 import { useSelector } from 'react-redux';
+import { getLocationTitle } from '../../utils/getLocationTitle.js';
 import { selectEmail } from '../../redux/auth/selectors.js';
+import s from './SubTitle.module.scss';
 
 const SubTitle = () => {
   const location = useLocation();

@@ -1,0 +1,32 @@
+.container {
+  float: left;
+  height: 100vh;
+  padding: 40px 18px 0px 18px;
+  border-right: 1px solid $primary-grey-color;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0 auto;
+}
+
+.link {
+  width: 44px;
+  height: 44px;
+  border-radius: 100%;
+  background-color: $primary-white-color;
+  box-shadow: 0 -1px 7px 0 rgba(71, 71, 71, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navIcon {
+  fill: $primary-icon-fill-color;
+}
+
+.active > .navIcon {
+  fill: $primary-accent-color;
+}

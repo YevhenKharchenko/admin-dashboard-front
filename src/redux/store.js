@@ -11,16 +11,18 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/slice.js';
+import { dashboardReducer } from './dashboard/slice.js';
 
 const authPersistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['token', 'isLoggedIn', 'user'],
+  whitelist: ['isLoggedIn', 'user'],
 };
 
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
+    dashboard: dashboardReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

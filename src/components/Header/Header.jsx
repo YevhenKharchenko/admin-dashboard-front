@@ -1,16 +1,20 @@
 import { useCallback, useEffect } from 'react';
 import { useIsDesktop, useModal } from '../../hooks/index.js';
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn } from '../../redux/auth/selectors.js';
 import { sprite } from '../../assets/icons/index.js';
 import Logo from '../Logo/Logo.jsx';
 import Container from '../shared/Container/Container.jsx';
 import SubTitle from '../SubTitle/SubTitle.jsx';
 import Title from '../Title/Title.jsx';
 import BurgerMenu from '../BurgerMenu/BurgerMenu.jsx';
+import LogoutBtn from '../LogoutBtn/LogoutBtn.jsx';
 import s from './Header.module.scss';
 
 const Header = () => {
   const isDesktop = useIsDesktop();
   const setModal = useModal();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const closeModal = useCallback(() => {
     setModal();
@@ -21,10 +25,10 @@ const Header = () => {
   }, [setModal, closeModal]);
 
   useEffect(() => {
-    if (isDesktop) {
+    if (isDesktop || !isLoggedIn) {
       closeModal();
     }
-  }, [isDesktop, closeModal]);
+  }, [isDesktop, isLoggedIn, closeModal]);
 
   return (
     <header className={s.header}>
@@ -44,6 +48,7 @@ const Header = () => {
           <Title />
           <SubTitle />
         </div>
+        {isDesktop && <LogoutBtn />}
       </Container>
     </header>
   );
