@@ -1,5 +1,15 @@
-.main {
+.dashboardWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 80px;
+
+  @include media(tablet) {
+    gap: 20px;
+    padding-bottom: 40px;
+  }
+
   @include media(desktop) {
-    margin-left: 88px;
+    flex-direction: row;
   }
 }

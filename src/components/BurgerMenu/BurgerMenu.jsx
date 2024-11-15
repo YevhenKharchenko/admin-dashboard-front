@@ -5,11 +5,11 @@ import CloseBtn from '../shared/CloseBtn/CloseBtn.jsx';
 import LogoutBtn from '../LogoutBtn/LogoutBtn.jsx';
 import s from './BurgerMenu.module.scss';
 
-const buildLinkClass = ({ isActive }) => {
-  return clsx(s.link, isActive && s.active);
-};
-
 const BurgerMenu = ({ closeModal }) => {
+  const buildLinkClass = ({ isActive }) => {
+    return clsx(s.link, isActive && s.active);
+  };
+
   return (
     <div className={s.container}>
       <CloseBtn handleClick={closeModal} />

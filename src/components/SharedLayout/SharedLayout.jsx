@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import { useIsDesktop } from '../../hooks/index.js';
 import Header from '../Header/Header.jsx';
 import Sidebar from '../Sidebar/Sidebar.jsx';
+import s from './SharedLayout.module.scss';
 
 const SharedLayout = () => {
   const isDesktop = useIsDesktop();
@@ -13,8 +14,10 @@ const SharedLayout = () => {
       <Suspense fallback={null}>
         <ToastContainer />
         <Header />
-        {isDesktop && <Sidebar />}
-        <Outlet />
+        <div className={s.wrapper}>
+          {isDesktop && <Sidebar />}
+          <Outlet />
+        </div>
       </Suspense>
     </>
   );

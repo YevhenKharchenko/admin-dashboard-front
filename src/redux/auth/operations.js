@@ -6,7 +6,6 @@ export const loginUser = createAsyncThunk('auth/login', async (credentials, thun
   try {
     const { data } = await instance.post('/user/login', credentials);
     toast.success(`You have successfully logged in.`);
-    console.log(data.data);
 
     return data.data;
   } catch (e) {
@@ -36,7 +35,6 @@ export const logoutUser = createAsyncThunk('auth/logout', async (_, thunkAPI) =>
 export const getCurrentUser = createAsyncThunk('auth/getCurrentUser', async (_, thunkAPI) => {
   try {
     const { data } = await instance.get('/user/user-info');
-    console.log(data.data);
 
     return data.data;
   } catch (e) {

@@ -5,7 +5,6 @@ import { instance } from '../../api/axiosInstance.js';
 export const getDashboard = createAsyncThunk('dashboard/getDashboard', async (_, thunkAPI) => {
   try {
     const { data } = await instance.get('/dashboard?page=1&perPage=6');
-    console.log(data);
 
     return data.data;
   } catch (e) {

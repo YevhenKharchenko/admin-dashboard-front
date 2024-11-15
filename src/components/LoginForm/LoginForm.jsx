@@ -19,7 +19,6 @@ const LoginForm = () => {
   } = useForm({ resolver: yupResolver(loginValidationSchema) });
 
   const onSubmit = data => {
-    console.log(data);
     dispatch(loginUser(data));
   };
 

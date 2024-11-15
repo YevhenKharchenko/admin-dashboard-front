@@ -1,37 +1,47 @@
+import clsx from 'clsx';
+import EllipsisText from 'react-ellipsis-text';
 import { useSelector } from 'react-redux';
 import { selectCustomers } from '../../redux/dashboard/selectors.js';
-import EllipsisText from 'react-ellipsis-text';
 import s from './RecentCustomers.module.scss';
-import clsx from 'clsx';
 
 const RecentCustomers = () => {
   const customers = useSelector(selectCustomers);
-  console.log(customers);
 
   return (
     <section>
-      <table className={s.table}>
+      <table className={s.table} aria-label="Recent Customers">
         <caption className={s.title}>Recent Customers</caption>
-        <thead>
+        <thead className={s.thead}>
           <tr>
-            <th className={s.columnTitle}>Name</th>
-            <th className={s.columnTitle}>Email</th>
-            <th className={s.columnTitle}>Spent</th>
+            <th className={clsx(s.columnTitle, s.td)}>Name</th>
+            <th className={clsx(s.columnTitle, s.td)}>Email</th>
+            <th className={clsx(s.columnTitle, s.td)}>Spent</th>
           </tr>
         </thead>
         <tbody>
-          {customers.map((el, idx) => {
-            return (
-              <tr key={el._id} className={clsx(s.tableRow, idx === 4 && s.lastRow)}>
-                <th className={s.nameWrapper}>
-                  <img src={el.photo || el.image} alt="Photo of customer" width="24" height="24" />
-                  <EllipsisText text={el.name} length={14} />
-                </th>
-                <th className={s.emailWrapper}>{<EllipsisText text={el.email} length={20} />}</th>
-                <th className={s.spentWrapper}>{el.spent}</th>
-              </tr>
-            );
-          })}
+          {customers.length > 0 &&
+            customers.map((el, idx) => {
+              return (
+                <tr
+                  key={el._id}
+                  className={clsx(s.tableRow, s.td, idx === customers.length - 1 && s.lastRow)}
+                >
+                  <td className={clsx(s.nameWrapper, s.td)}>
+                    <img
+                      src={el.photo || el.image}
+                      alt={`Photo of ${el.name}`}
+                      width="24"
+                      height="24"
+                    />
+                    <EllipsisText text={el.name} length={14} />
+                  </td>
+                  <td className={clsx(s.emailWrapper, s.td)}>
+                    {<EllipsisText text={el.email} length={20} />}
+                  </td>
+                  <td className={clsx(s.spentWrapper, s.td)}>{el.spent}</td>
+                </tr>
+              );
+            })}
         </tbody>
       </table>
     </section>

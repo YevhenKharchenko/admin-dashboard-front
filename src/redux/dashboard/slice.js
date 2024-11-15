@@ -24,7 +24,6 @@ const dashboardSlice = createSlice({
         state.customersCount = action.payload.customersCount;
         state.productsCount = action.payload.productsCount;
         state.suppliersCount = action.payload.suppliersCount;
-        console.log(action.payload);
       })
       .addCase(getDashboard.rejected, handleError);
   },
