@@ -80,7 +80,7 @@
 }
 
 .income {
-  color: #59b17a;
+  color: $primary-accent-color;
   background-color: rgba(89, 177, 122, 0.1);
 }
 
@@ -90,16 +90,7 @@
 }
 
 .error {
-  color: $primary-text-color;
   background-color: rgba(29, 30, 33, 0.1);
-}
-
-.typeColumn {
-  @include media(tablet) {
-  }
-
-  @include media(desktop) {
-  }
 }
 
 .nameColumn {

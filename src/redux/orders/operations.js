@@ -7,7 +7,6 @@ export const getOrders = createAsyncThunk(
   async ({ page = 1, perPage = 5, name = '' }, thunkAPI) => {
     try {
       const { data } = await instance.get(`/orders?page=${page}&perPage=${perPage}&name=${name}`);
-      console.log(data);
 
       return data.data;
     } catch (e) {

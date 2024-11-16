@@ -1,15 +1,15 @@
 import { sprite } from '../../assets/icons/index.js';
 import Button from '../shared/Button/Button.jsx';
 import Input from '../shared/Input/Input.jsx';
-import s from './UserNameFilter.module.scss';
+import s from './NameFilter.module.scss';
 
-const UserNameFilter = () => {
+const NameFilter = ({ handleFilterChange, placeholder }) => {
   return (
-    <form className={s.form}>
+    <form className={s.form} onSubmit={handleFilterChange}>
       <label>
-        <Input className={s.input} placeholder="User Name" />
+        <Input className={s.input} name="name" placeholder={placeholder} />
       </label>
-      <Button className={s.btn}>
+      <Button type="submit" className={s.btn}>
         <svg className={s.icon} width="14" height="14">
           <use xlinkHref={`${sprite}#icon-filter`}></use>
         </svg>
@@ -19,4 +19,4 @@ const UserNameFilter = () => {
   );
 };
 
-export default UserNameFilter;
+export default NameFilter;

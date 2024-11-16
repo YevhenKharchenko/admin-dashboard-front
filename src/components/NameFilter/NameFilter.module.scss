@@ -1,0 +1,42 @@
+.form {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 40px 0 20px 0;
+
+  @include media(tablet) {
+    padding: 50px 0 20px 0;
+    gap: 14px;
+  }
+
+  @include media(desktop) {
+    padding: 75px 0 20px 0;
+  }
+}
+
+.input {
+  width: 215px;
+
+  @include media(tablet) {
+    width: 224px;
+  }
+}
+
+.btn {
+  padding: 13px 30px;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  width: auto;
+
+  @include media(tablet) {
+    padding: 15px 30px;
+    font-size: 14px;
+    line-height: 1.28571;
+  }
+}
+
+.icon {
+  stroke: $primary-white-color;
+  fill: none;
+}

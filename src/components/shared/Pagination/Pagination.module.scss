@@ -1,0 +1,27 @@
+.wrapper {
+  padding-top: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #e7f1ed;
+  transition: all $animation-duration $animation-time-function;
+
+  &:hover {
+    width: 12px;
+    height: 12px;
+    background-color: $primary-accent-color;
+  }
+}
+
+.active {
+  width: 12px;
+  height: 12px;
+  background-color: $primary-accent-color;
+}

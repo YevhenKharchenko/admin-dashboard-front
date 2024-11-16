@@ -28,6 +28,7 @@ const RecentCustomers = () => {
                 >
                   <td className={clsx(s.nameWrapper, s.td)}>
                     <img
+                      className={s.img}
                       src={el.photo || el.image}
                       alt={`Photo of ${el.name}`}
                       width="24"
@@ -35,10 +36,10 @@ const RecentCustomers = () => {
                     />
                     <EllipsisText text={el.name} length={14} />
                   </td>
-                  <td className={clsx(s.emailWrapper, s.td)}>
+                  <td className={clsx(s.cellWrapper, s.td)}>
                     {<EllipsisText text={el.email} length={20} />}
                   </td>
-                  <td className={clsx(s.spentWrapper, s.td)}>{el.spent}</td>
+                  <td className={clsx(s.cellWrapper, s.td)}>{el.spent}</td>
                 </tr>
               );
             })}

@@ -94,20 +94,22 @@
   @include media(tablet) {
     flex-direction: row;
     align-items: center;
-    padding: 26px 0 26px 0;
+    padding: 20px 0 21px 0;
   }
 }
 
-.emailWrapper {
-  padding-left: 10px;
-  text-align: left;
+.img {
+  border-radius: 30px;
+  width: 24px;
+  height: 24px;
 
   @include media(tablet) {
-    padding-left: 20px;
+    width: 36px;
+    height: 36px;
   }
 }
 
-.spentWrapper {
+.cellWrapper {
   padding-left: 10px;
   text-align: left;
 

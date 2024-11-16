@@ -1,5 +1,173 @@
 .section {
-  width: 671px;
-  min-width: 671px;
+  width: 355px;
   overflow-x: scroll;
+
+  @include media(tablet) {
+    width: 736px;
+  }
+
+  @include media(desktop) {
+    width: 1280px;
+  }
+}
+
+.table {
+  border: 1px solid $primary-grey-color;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top: none;
+  padding: 0 14px 0 14px;
+  background-color: $primary-white-color;
+
+  @include media(tablet) {
+    padding: 0 20px 0 20px;
+  }
+}
+
+.title {
+  border: 0px solid rgba(29, 30, 33, 0.08);
+  border-radius: 8px 8px 0 0;
+  width: 671px;
+  background-color: $primary-caption-bg-color;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  padding: 14px;
+  text-align: left;
+
+  @include media(tablet) {
+    padding: 20px;
+    width: 960px;
+    font-size: 18px;
+    line-height: 1.33333;
+  }
+
+  @include media(desktop) {
+    width: 1280px;
+    line-height: 1.33333;
+  }
+}
+
+.thead {
+  text-align: left;
+}
+
+.columnTitle {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16667;
+  color: $primary-placeholder-color;
+  text-align: left;
+
+  &:not(:first-child) {
+    padding: 14px;
+  }
+
+  @include media(tablet) {
+    font-size: 14px;
+    line-height: 1.28571;
+  }
+
+  @include media(desktop) {
+    padding: 20px;
+  }
+}
+
+.lastRow .td {
+  border-bottom: none;
+
+  @include media(desktop) {
+    padding-bottom: 30px;
+  }
+}
+
+.td {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16667;
+  border-bottom: 1px solid $primary-grey-color;
+
+  &:not(:last-of-type) {
+    border-right: 1px solid $primary-grey-color;
+  }
+
+  @include media(tablet) {
+    font-size: 16px;
+    line-height: 1.125;
+  }
+}
+
+.nameWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 0 14px 0;
+  text-align: left;
+
+  @include media(tablet) {
+    flex-direction: row;
+    align-items: center;
+    padding: 26px 0 26px 0;
+  }
+}
+
+.img {
+  border-radius: 30px;
+  width: 24px;
+  height: 24px;
+
+  @include media(tablet) {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.cellWrapper {
+  padding-left: 10px;
+  text-align: left;
+
+  @include media(tablet) {
+    padding-left: 20px;
+  }
+}
+
+.status {
+  border-radius: 40px;
+  padding: 4px 12px;
+  width: 89px;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: -0.05em;
+  text-align: center;
+
+  @include media(tablet) {
+    font-size: 14px;
+  }
+}
+
+.completed {
+  color: $primary-accent-color;
+  background-color: rgba(89, 177, 122, 0.1);
+}
+
+.confirmed,
+.shipped,
+.delivered {
+  color: #8059e4;
+  background-color: rgba(128, 89, 228, 0.1);
+}
+
+.pending {
+  color: #f79042;
+  background-color: rgba(247, 144, 66, 0.1);
+}
+
+.cancelled {
+  color: #e85050;
+  background-color: rgba(232, 80, 80, 0.1);
+}
+
+.processing {
+  color: #70a6e8;
+  background-color: rgba(112, 166, 232, 0.1);
 }
