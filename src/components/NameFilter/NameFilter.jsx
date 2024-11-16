@@ -3,9 +3,15 @@ import Button from '../shared/Button/Button.jsx';
 import Input from '../shared/Input/Input.jsx';
 import s from './NameFilter.module.scss';
 
-const NameFilter = ({ handleFilterChange, placeholder }) => {
+const NameFilter = ({ onFilterChange, placeholder }) => {
+  const handleSubmit = e => {
+    e.preventDefault();
+    const filterValue = e.target.elements['name'].value;
+    onFilterChange(filterValue);
+  };
+
   return (
-    <form className={s.form} onSubmit={handleFilterChange}>
+    <form className={s.form} onSubmit={handleSubmit}>
       <label>
         <Input className={s.input} name="name" placeholder={placeholder} />
       </label>

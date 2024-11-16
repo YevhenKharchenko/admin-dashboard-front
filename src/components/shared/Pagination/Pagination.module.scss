@@ -6,6 +6,14 @@
   justify-content: center;
 }
 
+.minGap {
+  gap: 8px;
+
+  @include media(tablet) {
+    gap: 14px;
+  }
+}
+
 .btn {
   width: 10px;
   height: 10px;

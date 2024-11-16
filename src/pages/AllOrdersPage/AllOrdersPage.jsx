@@ -18,10 +18,9 @@ const AllOrdersPage = () => {
     setCurrentPage(page);
   };
 
-  const handleFilterChange = e => {
-    e.preventDefault();
-    const filterValue = e.target.elements['name'].value;
-    setFilterName(filterValue);
+  const handleFilterChange = value => {
+    setFilterName(value);
+    setCurrentPage(1);
   };
 
   useEffect(() => {
@@ -31,7 +30,7 @@ const AllOrdersPage = () => {
   return (
     <main>
       <Container className={s.container}>
-        <NameFilter handleFilterChange={handleFilterChange} placeholder="User Name" />
+        <NameFilter onFilterChange={handleFilterChange} placeholder="User Name" />
         <AllOrders />
         <Pagination
           totalPages={totalPages}

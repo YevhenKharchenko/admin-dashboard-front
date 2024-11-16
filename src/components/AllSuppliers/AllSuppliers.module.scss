@@ -112,23 +112,12 @@
   }
 }
 
-.img {
-  border-radius: 30px;
-  width: 24px;
-  height: 24px;
-
-  @include media(tablet) {
-    width: 36px;
-    height: 36px;
-  }
-}
-
 .cellWrapper {
-  padding-left: 10px;
+  padding: 30px 0 30px 10px;
   text-align: left;
 
   @include media(tablet) {
-    padding-left: 20px;
+    padding: 30px 0 30px 20px;
   }
 }
 
@@ -146,29 +135,12 @@
   }
 }
 
-.completed {
+.active {
   color: $primary-accent-color;
   background-color: rgba(89, 177, 122, 0.1);
 }
 
-.confirmed,
-.shipped,
-.delivered {
-  color: #8059e4;
-  background-color: rgba(128, 89, 228, 0.1);
-}
-
-.pending {
-  color: #f79042;
-  background-color: rgba(247, 144, 66, 0.1);
-}
-
-.cancelled {
+.deactive {
   color: #e85050;
   background-color: rgba(232, 80, 80, 0.1);
-}
-
-.processing {
-  color: #70a6e8;
-  background-color: rgba(112, 166, 232, 0.1);
 }
