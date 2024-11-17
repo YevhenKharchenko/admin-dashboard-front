@@ -1,11 +1,11 @@
 import clsx from 'clsx';
 import { useSelector } from 'react-redux';
 import { selectProducts } from '../../redux/products/selectors.js';
+import { sprite } from '../../assets/icons/index.js';
 import s from './AllProducts.module.scss';
 
 const AllProducts = () => {
   const products = useSelector(selectProducts);
-  console.log(products);
 
   return (
     <section className={s.section}>
@@ -34,7 +34,18 @@ const AllProducts = () => {
                   <td className={clsx(s.cellWrapper, s.td)}>{el.stock}</td>
                   <td className={clsx(s.cellWrapper, s.td)}>{el.suppliers}</td>
                   <td className={clsx(s.cellWrapper, s.td)}>{el.price}</td>
-                  <td className={clsx(s.cellWrapper, s.td)}>{el.price}</td>
+                  <td className={clsx(s.cellWrapper, s.td, s.actionCell)}>
+                    <button type="button" className={s.editBtn}>
+                      <svg className={s.icon} width="16" height="16">
+                        <use xlinkHref={`${sprite}#icon-edit`}></use>
+                      </svg>
+                    </button>
+                    <button type="button" className={s.deleteBtn}>
+                      <svg className={s.icon} width="16" height="16">
+                        <use xlinkHref={`${sprite}#icon-trash`}></use>
+                      </svg>
+                    </button>
+                  </td>
                 </tr>
               );
             })}

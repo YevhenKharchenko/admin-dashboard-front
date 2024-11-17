@@ -1,0 +1,11 @@
+.filterWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  @include media(tablet) {
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+  }
+}

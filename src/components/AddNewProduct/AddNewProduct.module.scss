@@ -1,0 +1,93 @@
+.container {
+  padding: 40px 20px;
+  background-color: $primary-white-color;
+  position: relative;
+  border-radius: 12px;
+  width: 335px;
+
+  @include media(tablet) {
+    width: 536px;
+    padding: 40px 40px;
+  }
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+
+  @include media(tablet) {
+    font-size: 24px;
+    line-height: 1.16667;
+    margin-bottom: 40px;
+  }
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+
+  @include media(tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 8px;
+  }
+}
+
+.input {
+  @include media(tablet) {
+    width: 224px;
+  }
+}
+
+.errorContainer {
+  min-height: 16px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding-left: 18px;
+
+  @include media(tablet) {
+    min-height: 14px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-left: 16px;
+  }
+}
+
+.error {
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: $primary-error-color;
+
+  @include media(tablet) {
+    font-size: 12px;
+    line-height: 1.16667;
+  }
+}
+
+.btnWrapper {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.btn {
+  @include media(tablet) {
+    width: 133px;
+  }
+}
+
+.cancelBtn {
+  composes: btn;
+  background-color: $primary-grey-color;
+  color: $primary-placeholder-color;
+  border: 1px solid $primary-grey-color;
+
+  &:hover {
+    color: $primary-accent-color;
+    border-color: $primary-accent-color;
+    background-color: transparent;
+  }
+}

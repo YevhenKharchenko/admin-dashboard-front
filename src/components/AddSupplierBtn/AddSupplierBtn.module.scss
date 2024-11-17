@@ -1,0 +1,23 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 60px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(89, 177, 122, 0.5);
+  padding: 13px 30px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.5;
+  transition: all $animation-duration $animation-time-function;
+
+  &:hover {
+    background-color: $primary-hover-accent-color;
+    color: $primary-white-color;
+  }
+
+  @include media(tablet) {
+    font-size: 14px;
+    line-height: 1.28571;
+  }
+}

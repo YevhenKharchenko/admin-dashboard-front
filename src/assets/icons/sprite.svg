@@ -53,5 +53,11 @@
     <symbol id="icon-x" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M24 8 8 24M8 8l16 16"/>
     </symbol>
+     <symbol id="icon-edit" viewBox="0 0 32 32">
+      <path fill="none" stroke="#59b17a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="M22.67 4.002a3.766 3.766 0 0 1 4.109-.817 3.766 3.766 0 0 1 2.328 3.483 3.779 3.779 0 0 1-1.105 2.666l-18 18-7.333 2 2-7.333 18-18z" style="stroke:var(--color1, #59b17a)"/>
+    </symbol>
+    <symbol id="icon-trash" viewBox="0 0 32 32">
+      <path fill="none" stroke="#e85050" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="M4 8h24M25.333 8v18.667a2.668 2.668 0 0 1-2.667 2.667H9.333a2.668 2.668 0 0 1-2.667-2.667V8m4 0V5.333a2.668 2.668 0 0 1 2.667-2.667h5.333a2.668 2.668 0 0 1 2.667 2.667V8M13.334 14.667v8M18.666 14.667v8" style="stroke:var(--color2, #e85050)"/>
+    </symbol>
   </defs>
 </svg>

@@ -6,6 +6,7 @@ import Container from '../../components/shared/Container/Container.jsx';
 import AllSuppliers from '../../components/AllSuppliers/AllSuppliers.jsx';
 import NameFilter from '../../components/NameFilter/NameFilter.jsx';
 import Pagination from '../../components/shared/Pagination/Pagination.jsx';
+import AddSupplierBtn from '../../components/AddSupplierBtn/AddSupplierBtn.jsx';
 import s from './AllSuppliersPage.module.scss';
 
 const AllSuppliersPage = () => {
@@ -30,7 +31,10 @@ const AllSuppliersPage = () => {
   return (
     <main>
       <Container className={s.container}>
-        <NameFilter onFilterChange={handleFilterChange} placeholder="User Name" />
+        <div className={s.filterWrapper}>
+          <NameFilter onFilterChange={handleFilterChange} placeholder="User Name" />
+          <AddSupplierBtn />
+        </div>
         <AllSuppliers />
         <Pagination
           totalPages={totalPages}

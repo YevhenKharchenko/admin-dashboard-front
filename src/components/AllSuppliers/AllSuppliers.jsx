@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { useSelector } from 'react-redux';
 import { selectSuppliers } from '../../redux/suppliers/selectors.js';
+import { sprite } from '../../assets/icons/index.js';
 import s from './AllSuppliers.module.scss';
 
 const AllSuppliers = () => {
@@ -44,7 +45,14 @@ const AllSuppliers = () => {
                       {el.status}
                     </p>
                   </td>
-                  <td className={clsx(s.cellWrapper, s.td)}>{el.status}</td>
+                  <td className={clsx(s.cellWrapper, s.td)}>
+                    <button className={s.editBtn}>
+                      <svg className={s.icon} width="14" height="14">
+                        <use xlinkHref={`${sprite}#icon-edit`}></use>
+                      </svg>
+                      <span>Edit</span>
+                    </button>
+                  </td>
                 </tr>
               );
             })}

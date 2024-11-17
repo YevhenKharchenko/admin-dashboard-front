@@ -141,6 +141,20 @@
 }
 
 .deactive {
-  color: #e85050;
+  color: $primary-error-color;
   background-color: rgba(232, 80, 80, 0.1);
+}
+
+.editBtn {
+  border: 1px solid rgba(89, 177, 122, 0.5);
+  border-radius: 30px;
+  padding: 8px 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.125;
+  color: $primary-accent-color;
 }
