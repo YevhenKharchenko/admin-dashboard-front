@@ -1,6 +1,7 @@
 .section {
   width: 355px;
   overflow-x: scroll;
+  padding-bottom: 20px;
 
   @include media(tablet) {
     width: 736px;
@@ -124,24 +125,4 @@
 .actionCell {
   display: flex;
   gap: 8px;
-}
-
-.btn {
-  border-radius: 30px;
-  padding: 8px;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.editBtn {
-  composes: btn;
-  border: 1px solid rgba(89, 177, 122, 0.5);
-}
-
-.deleteBtn {
-  composes: btn;
-  border: 1px solid rgba(232, 80, 80, 0.5);
 }

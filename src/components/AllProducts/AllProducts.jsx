@@ -1,10 +1,11 @@
 import clsx from 'clsx';
 import { useSelector } from 'react-redux';
 import { selectProducts } from '../../redux/products/selectors.js';
-import { sprite } from '../../assets/icons/index.js';
+import EditProductBtn from '../EditProductBtn/EditProductBtn.jsx';
+import DeleteProductBtn from '../DeleteProductBtn/DeleteProductBtn.jsx';
 import s from './AllProducts.module.scss';
 
-const AllProducts = () => {
+const AllProducts = ({ currentPage }) => {
   const products = useSelector(selectProducts);
 
   return (
@@ -35,16 +36,8 @@ const AllProducts = () => {
                   <td className={clsx(s.cellWrapper, s.td)}>{el.suppliers}</td>
                   <td className={clsx(s.cellWrapper, s.td)}>{el.price}</td>
                   <td className={clsx(s.cellWrapper, s.td, s.actionCell)}>
-                    <button type="button" className={s.editBtn}>
-                      <svg className={s.icon} width="16" height="16">
-                        <use xlinkHref={`${sprite}#icon-edit`}></use>
-                      </svg>
-                    </button>
-                    <button type="button" className={s.deleteBtn}>
-                      <svg className={s.icon} width="16" height="16">
-                        <use xlinkHref={`${sprite}#icon-trash`}></use>
-                      </svg>
-                    </button>
+                    <EditProductBtn item={el} currentPage={currentPage} />
+                    <DeleteProductBtn item={el} currentPage={currentPage} />
                   </td>
                 </tr>
               );

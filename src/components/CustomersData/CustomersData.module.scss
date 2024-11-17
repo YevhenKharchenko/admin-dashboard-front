@@ -1,6 +1,7 @@
 .section {
   width: 355px;
   overflow-x: scroll;
+  padding-bottom: 20px;
 
   @include media(tablet) {
     width: 736px;

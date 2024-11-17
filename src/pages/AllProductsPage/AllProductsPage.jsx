@@ -33,9 +33,9 @@ const AllProductsPage = () => {
       <Container className={s.container}>
         <div className={s.filterWrapper}>
           <NameFilter onFilterChange={handleFilterChange} placeholder="Product  Name" />
-          <AddProductBtn />
+          <AddProductBtn currentPage={currentPage} />
         </div>
-        <AllProducts />
+        <AllProducts currentPage={currentPage} />
         <Pagination
           totalPages={totalPages}
           currentPage={currentPage}

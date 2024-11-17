@@ -4,7 +4,7 @@ import { sprite } from '../../assets/icons/index.js';
 import AddNewProduct from '../AddNewProduct/AddNewProduct.jsx';
 import s from './AddProductBtn.module.scss';
 
-const AddProductBtn = () => {
+const AddProductBtn = ({ currentPage }) => {
   const setModal = useModal();
 
   const closeModal = useCallback(() => {
@@ -12,8 +12,8 @@ const AddProductBtn = () => {
   }, [setModal]);
 
   const handleBtnClick = useCallback(() => {
-    setModal(<AddNewProduct closeModal={closeModal} />);
-  }, [setModal, closeModal]);
+    setModal(<AddNewProduct closeModal={closeModal} currentPage={currentPage} />);
+  }, [setModal, closeModal, currentPage]);
 
   return (
     <button className={s.btn} onClick={handleBtnClick}>

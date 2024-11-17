@@ -18,7 +18,7 @@ const LoginPage = () => {
           <div className={s.heroWrapper}>
             <section className={s.hero}>
               <p className={s.heroText}>
-                Your medication, delivered Say goodbye to all{' '}
+                Your medication, delivered Say goodbye to all
                 <span className={s.heroSpan}>your healthcare</span> worries with us
               </p>
             </section>
