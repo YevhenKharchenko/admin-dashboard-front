@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
   <defs>
-    <symbol id="icon-add-outline" viewBox="0 0 32 32">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M28 16H4M16 4z"/>
+    <symbol id="icon-add" viewBox="0 0 32 32">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M24 8 8 24M8 8l16 16"/>
     </symbol>
     <symbol id="icon-calendar" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M25.333 5.332H6.666a2.667 2.667 0 0 0-2.667 2.667v18.667a2.667 2.667 0 0 0 2.667 2.667h18.667A2.667 2.667 0 0 0 28 26.666V7.999a2.667 2.667 0 0 0-2.667-2.667zM21.332 2.668v5.333M10.668 2.668v5.333M4 13.332h24"/>

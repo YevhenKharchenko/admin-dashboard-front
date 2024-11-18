@@ -6,6 +6,7 @@ import AllOrders from '../../components/AllOrders/AllOrders.jsx';
 import Container from '../../components/shared/Container/Container.jsx';
 import NameFilter from '../../components/NameFilter/NameFilter.jsx';
 import Pagination from '../../components/shared/Pagination/Pagination.jsx';
+import DocumentTitle from '../../components/DocumentTitle.jsx';
 import s from './AllOrdersPage.module.scss';
 
 const AllOrdersPage = () => {
@@ -29,6 +30,7 @@ const AllOrdersPage = () => {
 
   return (
     <main>
+      <DocumentTitle>All Orders</DocumentTitle>
       <Container className={s.container}>
         <NameFilter onFilterChange={handleFilterChange} placeholder="User Name" />
         <AllOrders />

@@ -7,9 +7,9 @@ import { CATEGORY_OPTIONS } from '../../constants/index.js';
 import CloseBtn from '../shared/CloseBtn/CloseBtn.jsx';
 import Input from '../shared/Input/Input.jsx';
 import Button from '../shared/Button/Button.jsx';
-import s from './EditProductData.module.scss';
 import { useDispatch } from 'react-redux';
 import { editProduct, getProducts } from '../../redux/products/operations.js';
+import s from './EditProductData.module.scss';
 
 const EditProductData = ({ closeModal, item, currentPage }) => {
   const dispatch = useDispatch();
@@ -23,6 +23,7 @@ const EditProductData = ({ closeModal, item, currentPage }) => {
   const onSubmit = async formData => {
     await dispatch(editProduct({ id: item._id, formData }));
     await dispatch(getProducts({ page: currentPage, perPage: 5, name: '' }));
+    closeModal();
   };
 
   return (
@@ -53,7 +54,7 @@ const EditProductData = ({ closeModal, item, currentPage }) => {
                   {...field}
                   options={CATEGORY_OPTIONS}
                   styles={categoryStyles}
-                  placeholder="Select Category"
+                  placeholder="Category"
                   value={CATEGORY_OPTIONS.find(option => option.value === field.value)}
                   onChange={selectedOption => field.onChange(selectedOption?.value)}
                 />

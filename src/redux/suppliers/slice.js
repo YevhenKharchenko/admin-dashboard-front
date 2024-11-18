@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getSuppliers } from './operations.js';
 import { handleError, handleRefreshing } from '../../utils/index.js';
+import { addProduct, editProduct } from '../products/operations.js';
 
 const suppliersSlice = createSlice({
   name: 'suppliers',
@@ -19,7 +20,19 @@ const suppliersSlice = createSlice({
         state.suppliers = action.payload.suppliers;
         state.totalPages = action.payload.totalPages;
       })
-      .addCase(getSuppliers.rejected, handleError);
+      .addCase(getSuppliers.rejected, handleError)
+      .addCase(addProduct.pending, handleError)
+      .addCase(addProduct.fulfilled, state => {
+        state.isRefreshing = false;
+        state.error = null;
+      })
+      .addCase(addProduct.rejected, handleError)
+      .addCase(editProduct.pending, handleError)
+      .addCase(editProduct.fulfilled, state => {
+        state.isRefreshing = false;
+        state.error = null;
+      })
+      .addCase(editProduct.rejected, handleError);
   },
 });
 

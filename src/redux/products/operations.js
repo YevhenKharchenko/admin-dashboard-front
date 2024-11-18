@@ -35,7 +35,6 @@ export const addProduct = createAsyncThunk('products/addProduct', async (formDat
 export const editProduct = createAsyncThunk(
   'products/editProduct',
   async ({ id, formData }, thunkAPI) => {
-    console.log(id, formData);
     try {
       const { data } = await instance.put(`/products/${id}`, formData);
       toast.success('Product has been edited successfully!');

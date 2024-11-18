@@ -23,6 +23,7 @@ const AddNewProduct = ({ closeModal, currentPage }) => {
   const onSubmit = async data => {
     await dispatch(addProduct(data));
     await dispatch(getProducts({ page: currentPage, perPage: 5, name: '' }));
+    closeModal();
   };
 
   return (
@@ -48,7 +49,7 @@ const AddNewProduct = ({ closeModal, currentPage }) => {
                   {...field}
                   options={CATEGORY_OPTIONS}
                   styles={categoryStyles}
-                  placeholder="Select Category"
+                  placeholder="Category"
                   value={CATEGORY_OPTIONS.find(option => option.value === field.value)}
                   onChange={selectedOption => field.onChange(selectedOption?.value)}
                 />

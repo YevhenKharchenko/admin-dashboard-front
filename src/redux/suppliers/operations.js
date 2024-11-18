@@ -19,3 +19,34 @@ export const getSuppliers = createAsyncThunk(
     }
   }
 );
+
+export const addSupplier = createAsyncThunk('suppliers/addSupplier', async (formData, thunkAPI) => {
+  try {
+    const { data } = await instance.post(`/suppliers`, formData);
+    toast.success('Supplier has been added successfully!');
+
+    return data.data;
+  } catch (e) {
+    toast.error(
+      `Oops! Something went wrong. Please try again later or contact support. Error details: ${e.message}`
+    );
+    return thunkAPI.rejectWithValue(e.message);
+  }
+});
+
+export const editSupplier = createAsyncThunk(
+  'suppliers/editSupplier',
+  async ({ id, formData }, thunkAPI) => {
+    try {
+      const { data } = await instance.put(`/suppliers/${id}`, formData);
+      toast.success('Supplier has been edited successfully!');
+
+      return data.data;
+    } catch (e) {
+      toast.error(
+        `Oops! Something went wrong. Please try again later or contact support. Error details: ${e.message}`
+      );
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);

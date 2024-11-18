@@ -7,6 +7,7 @@ import AllProducts from '../../components/AllProducts/AllProducts.jsx';
 import NameFilter from '../../components/NameFilter/NameFilter.jsx';
 import Pagination from '../../components/shared/Pagination/Pagination.jsx';
 import AddProductBtn from '../../components/AddProductBtn/AddProductBtn.jsx';
+import DocumentTitle from '../../components/DocumentTitle.jsx';
 import s from './AllProductsPage.module.scss';
 
 const AllProductsPage = () => {
@@ -30,6 +31,7 @@ const AllProductsPage = () => {
 
   return (
     <main>
+      <DocumentTitle>All Products</DocumentTitle>
       <Container className={s.container}>
         <div className={s.filterWrapper}>
           <NameFilter onFilterChange={handleFilterChange} placeholder="Product  Name" />

@@ -32,6 +32,11 @@ export const CATEGORY_OPTIONS = [
   { value: 'Baby Care', label: 'Baby Care' },
 ];
 
+export const STATUS_OPTIONS = [
+  { value: 'Active', label: 'Active' },
+  { value: 'Deactive', label: 'Deactive' },
+];
+
 export const categories = [
   'Medicine',
   'Head',
@@ -45,3 +50,5 @@ export const categories = [
   'Orthopedic Products',
   'Baby Care',
 ];
+
+export const status = ['Active', 'Deactive'];

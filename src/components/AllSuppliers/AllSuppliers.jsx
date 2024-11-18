@@ -1,10 +1,11 @@
 import clsx from 'clsx';
 import { useSelector } from 'react-redux';
 import { selectSuppliers } from '../../redux/suppliers/selectors.js';
-import { sprite } from '../../assets/icons/index.js';
+import { formatAmount } from '../../utils/formatAmount.js';
+import EditSupplierBtn from '../EditSupplierBtn/EditSupplierBtn.jsx';
 import s from './AllSuppliers.module.scss';
 
-const AllSuppliers = () => {
+const AllSuppliers = ({ currentPage }) => {
   const suppliers = useSelector(selectSuppliers);
 
   return (
@@ -34,7 +35,7 @@ const AllSuppliers = () => {
                   <td className={clsx(s.cellWrapper, s.td)}>{el.address}</td>
                   <td className={clsx(s.cellWrapper, s.td)}>{el.suppliers}</td>
                   <td className={clsx(s.cellWrapper, s.td)}>{el.date}</td>
-                  <td className={clsx(s.cellWrapper, s.td)}>{el.amount}</td>
+                  <td className={clsx(s.cellWrapper, s.td)}>{formatAmount(el.amount)}</td>
                   <td className={clsx(s.cellWrapper, s.td)}>
                     <p
                       className={clsx(s.status, {
@@ -46,12 +47,7 @@ const AllSuppliers = () => {
                     </p>
                   </td>
                   <td className={clsx(s.cellWrapper, s.td)}>
-                    <button className={s.editBtn}>
-                      <svg className={s.icon} width="14" height="14">
-                        <use xlinkHref={`${sprite}#icon-edit`}></use>
-                      </svg>
-                      <span>Edit</span>
-                    </button>
+                    <EditSupplierBtn item={el} currentPage={currentPage} />
                   </td>
                 </tr>
               );

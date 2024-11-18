@@ -5,16 +5,15 @@ import { PrivateRoute } from './components/PrivateRoute.jsx';
 
 import SharedLayout from './components/SharedLayout/SharedLayout.jsx';
 import LoginPage from './pages/LoginPage/LoginPage.jsx';
-import DashboardPage from './pages/DashboardPage/DashboardPage.jsx';
-import AllOrdersPage from './pages/AllOrdersPage/AllOrdersPage.jsx';
-import AllProductsPage from './pages/AllProductsPage/AllProductsPage.jsx';
-import AllSuppliersPage from './pages/AllSuppliersPage/AllSuppliersPage.jsx';
-import CustomersDataPage from './pages/CustomersDataPage/CustomersDataPage.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoggedIn } from './redux/auth/selectors.js';
 import { getCurrentUser } from './redux/auth/operations.js';
 
-// const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage.jsx'));
+const DashboardPage = lazy(() => import('./pages/DashboardPage/DashboardPage.jsx'));
+const AllOrdersPage = lazy(() => import('./pages/AllOrdersPage/AllOrdersPage.jsx'));
+const AllProductsPage = lazy(() => import('./pages/AllProductsPage/AllProductsPage.jsx'));
+const AllSuppliersPage = lazy(() => import('./pages/AllSuppliersPage/AllSuppliersPage.jsx'));
+const CustomersDataPage = lazy(() => import('./pages/CustomersDataPage/CustomersDataPage.jsx'));
 
 function App() {
   const isLoggedIn = useSelector(selectIsLoggedIn);

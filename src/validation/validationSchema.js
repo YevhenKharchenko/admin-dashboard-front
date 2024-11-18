@@ -1,5 +1,5 @@
 import * as yup from 'yup';
-import { categories, REGEX } from '../constants/index.js';
+import { categories, REGEX, status } from '../constants/index.js';
 
 export const loginValidationSchema = yup.object().shape({
   email: yup.string().required('Email is required').matches(REGEX.EMAIL, 'Invalid email format'),
@@ -14,8 +14,8 @@ export const addProductValidationSchema = yup.object().shape({
   name: yup
     .string()
     .required('Name is required')
-    .min(3, 'Password must be at least 3 characters long')
-    .max(20, 'Password cannot be longer than 20 characters'),
+    .min(3, 'Name must be at least 3 characters long')
+    .max(20, 'Name cannot be longer than 20 characters'),
   suppliers: yup
     .string()
     .required('Suppliers is required')
@@ -35,4 +35,33 @@ export const addProductValidationSchema = yup.object().shape({
     .mixed()
     .required('Category is required')
     .oneOf(categories, 'Category must be one of options'),
+});
+
+export const addSupplierValidationSchema = yup.object().shape({
+  name: yup
+    .string()
+    .required('Name is required')
+    .min(3, 'Name must be at least 3 characters long')
+    .max(20, 'Name cannot be longer than 20 characters'),
+  address: yup
+    .string()
+    .required('Address is required')
+    .min(3, 'Address must be at least 3 characters long')
+    .max(20, 'Address cannot be longer than 20 characters'),
+  suppliers: yup
+    .string()
+    .required('Supplier is required')
+    .min(3, 'Supplier must be at least 3 characters long')
+    .max(20, 'Supplier cannot be longer than 20 characters'),
+  date: yup
+    .string()
+    .required('Date is required')
+    .min(3, 'Date must be at least 3 characters long')
+    .max(20, 'Date cannot be longer than 20 characters'),
+  amount: yup
+    .string()
+    .required('Amount is required')
+    .min(3, 'Amount must be at least 3 characters long')
+    .max(20, 'Amount cannot be longer than 20 characters'),
+  status: yup.mixed().required('Status is required').oneOf(status, 'Status must be one of options'),
 });

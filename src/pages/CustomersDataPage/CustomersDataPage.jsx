@@ -6,6 +6,7 @@ import Container from '../../components/shared/Container/Container.jsx';
 import CustomersData from '../../components/CustomersData/CustomersData.jsx';
 import NameFilter from '../../components/NameFilter/NameFilter.jsx';
 import Pagination from '../../components/shared/Pagination/Pagination.jsx';
+import DocumentTitle from '../../components/DocumentTitle.jsx';
 import s from './CustomersDataPage.module.scss';
 
 const CustomersDataPage = () => {
@@ -29,6 +30,7 @@ const CustomersDataPage = () => {
 
   return (
     <main>
+      <DocumentTitle>Customers Data</DocumentTitle>
       <Container className={s.container}>
         <NameFilter onFilterChange={handleFilterChange} placeholder="User Name" />
         <CustomersData />

@@ -19,7 +19,7 @@ const AddProductBtn = ({ currentPage }) => {
     <button className={s.btn} onClick={handleBtnClick}>
       <span className={s.iconWrapper}>
         <svg className={s.icon} width="16" height="16">
-          <use xlinkHref={`${sprite}#icon-add-outline`}></use>
+          <use xlinkHref={`${sprite}#icon-add`}></use>
         </svg>
       </span>
       <span className={s.span}>Add a new product</span>

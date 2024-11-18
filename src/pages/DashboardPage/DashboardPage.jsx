@@ -5,6 +5,7 @@ import Container from '../../components/shared/Container/Container.jsx';
 import Statistics from '../../components/Statistics/Statistics.jsx';
 import RecentCustomers from '../../components/RecentCustomers/RecentCustomers.jsx';
 import IncomeExpenses from '../../components/IncomeExpenses/IncomeExpenses.jsx';
+import DocumentTitle from '../../components/DocumentTitle.jsx';
 import s from './DashboardPage.module.scss';
 
 const DashboardPage = () => {
@@ -16,6 +17,7 @@ const DashboardPage = () => {
 
   return (
     <main className={s.main}>
+      <DocumentTitle>Dashboard</DocumentTitle>
       <Container className={s.container}>
         <Statistics />
         <div className={s.dashboardWrapper}>
