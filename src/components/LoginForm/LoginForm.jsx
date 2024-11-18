@@ -1,17 +1,20 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { loginValidationSchema } from '../../validation/validationSchema.js';
 import { loginUser } from '../../redux/auth/operations.js';
+import { selectIsAuthRefreshing } from '../../redux/auth/selectors.js';
 import Input from '../shared/Input/Input.jsx';
 import PasswordBtn from '../shared/PasswordBtn/PasswordBtn.jsx';
 import Button from '../shared/Button/Button.jsx';
+import Loader from '../shared/Loader/Loader.jsx';
 import s from './LoginForm.module.scss';
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsAuthRefreshing);
   const {
     register,
     handleSubmit,
@@ -48,9 +51,13 @@ const LoginForm = () => {
           {errors.password && <p className={s.error}>{errors.password.message}</p>}
         </div>
       </label>
-      <Button type="submit" className={s.btn}>
-        Log in
-      </Button>
+      {isLoading ? (
+        <Loader className={s.loader} />
+      ) : (
+        <Button type="submit" className={s.btn}>
+          Log in
+        </Button>
+      )}
     </form>
   );
 };

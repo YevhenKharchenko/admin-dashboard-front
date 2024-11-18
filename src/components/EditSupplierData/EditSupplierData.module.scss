@@ -93,13 +93,7 @@
 }
 
 .dateWrapper {
-  max-width: 295px;
   position: relative;
-
-  @include media(tablet) {
-    width: 210px;
-    max-width: 210px;
-  }
 }
 
 .calendarIcon {
@@ -110,10 +104,6 @@
   fill: none;
   stroke: $primary-accent-color;
   cursor: pointer;
-
-  @include media(tablet) {
-    right: 4px;
-  }
 }
 
 .dateInput {

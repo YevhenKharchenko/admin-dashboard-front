@@ -45,3 +45,14 @@
     max-width: 323px;
   }
 }
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 22px;
+
+  @include media(tablet) {
+    max-width: 323px;
+  }
+}
