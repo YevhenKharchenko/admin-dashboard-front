@@ -1,4 +1,3 @@
-import { ToastContainer } from 'react-toastify';
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 import { useIsDesktop } from '../../hooks/index.js';
@@ -12,7 +11,6 @@ const SharedLayout = () => {
   return (
     <>
       <Suspense fallback={null}>
-        <ToastContainer />
         <Header />
         <div className={s.wrapper}>
           {isDesktop && <Sidebar />}

@@ -4,11 +4,12 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { addProductValidationSchema } from '../../validation/validationSchema.js';
 import { categoryStyles } from '../../constants/selectStyles.js';
 import { CATEGORY_OPTIONS } from '../../constants/index.js';
+import { useDispatch } from 'react-redux';
+import { editProduct, getProducts } from '../../redux/products/operations.js';
+import { capitalizeFirstLetter } from '../../utils/index.js';
 import CloseBtn from '../shared/CloseBtn/CloseBtn.jsx';
 import Input from '../shared/Input/Input.jsx';
 import Button from '../shared/Button/Button.jsx';
-import { useDispatch } from 'react-redux';
-import { editProduct, getProducts } from '../../redux/products/operations.js';
 import s from './EditProductData.module.scss';
 
 const EditProductData = ({ closeModal, item, currentPage }) => {
@@ -21,7 +22,10 @@ const EditProductData = ({ closeModal, item, currentPage }) => {
   } = useForm({ resolver: yupResolver(addProductValidationSchema) });
 
   const onSubmit = async formData => {
-    await dispatch(editProduct({ id: item._id, formData }));
+    const formattedName = capitalizeFirstLetter(formData.name);
+    const updatedFormData = { ...formData, name: formattedName };
+
+    await dispatch(editProduct({ id: item._id, formData: updatedFormData }));
     await dispatch(getProducts({ page: currentPage, perPage: 5, name: '' }));
     closeModal();
   };

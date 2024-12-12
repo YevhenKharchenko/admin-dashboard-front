@@ -6,6 +6,7 @@ import { addProduct, getProducts } from '../../redux/products/operations.js';
 import { addProductValidationSchema } from '../../validation/validationSchema.js';
 import { categoryStyles } from '../../constants/selectStyles.js';
 import { CATEGORY_OPTIONS } from '../../constants/index.js';
+import { capitalizeFirstLetter } from '../../utils/capitalizeFirstLetter.js';
 import CloseBtn from '../shared/CloseBtn/CloseBtn.jsx';
 import Input from '../shared/Input/Input.jsx';
 import Button from '../shared/Button/Button.jsx';
@@ -21,7 +22,9 @@ const AddNewProduct = ({ closeModal, currentPage }) => {
   } = useForm({ resolver: yupResolver(addProductValidationSchema) });
 
   const onSubmit = async data => {
-    await dispatch(addProduct(data));
+    const formattedName = capitalizeFirstLetter(data.name);
+
+    await dispatch(addProduct({ ...data, name: formattedName }));
     await dispatch(getProducts({ page: currentPage, perPage: 5, name: '' }));
     closeModal();
   };

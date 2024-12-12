@@ -1,4 +1,3 @@
-import { ToastContainer } from 'react-toastify';
 import { NavLink } from 'react-router-dom';
 import { logo } from '../../assets/images/index.js';
 import Container from '../../components/shared/Container/Container.jsx';
@@ -10,7 +9,6 @@ const LoginPage = () => {
   return (
     <main className={s.main}>
       <DocumentTitle>Login</DocumentTitle>
-      <ToastContainer />
       <div className={s.backgroundWrapper}>
         <Container className={s.container}>
           <NavLink to="/login" className={s.logoWrapper} aria-label="Go to the Home page">

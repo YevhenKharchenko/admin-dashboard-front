@@ -5,7 +5,7 @@ import { instance } from '../../api/index.js';
 export const loginUser = createAsyncThunk('auth/login', async (credentials, thunkAPI) => {
   try {
     const { data } = await instance.post('/user/login', credentials);
-    toast.success(`Welcome ${data.data.name}`);
+    toast.success(`Welcome ${data.data.name}!`);
 
     return data.data;
   } catch (e) {

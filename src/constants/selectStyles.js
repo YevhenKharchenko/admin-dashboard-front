@@ -32,6 +32,12 @@ const baseStyles = {
     color: state.isSelected ? STYLES.PRIMARY_WHITE_COLOR : 'rgba(255, 255, 255, 0.5)',
     backgroundColor: 'none',
     cursor: 'pointer',
+    '&:hover': {
+      color: STYLES.PRIMARY_WHITE_COLOR,
+    },
+    '&:active': {
+      backgroundColor: 'transparent',
+    },
   }),
   dropdownIndicator: (baseStyles, state) => ({
     ...baseStyles,

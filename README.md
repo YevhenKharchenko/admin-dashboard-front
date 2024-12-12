@@ -9,7 +9,7 @@ tasks.
 - [Figma Design](https://www.figma.com/design/z1JklHHxX8kTGo3zWvlzat/Admin-dashboard?node-id=0-1&node-type=canvas&t=2gOhZ7xupqOJ7nL0-0)
 - [Backend Documentation](https://admin-dashboard-back-n51a.onrender.com/api-docs/)
 - [Backend Repository](https://github.com/YevhenKharchenko/admin-dashboard-back/tree/main)
-- [Live Demo](https://your-demo-url.com)
+- [Live Demo](https://admin-dashboard-orcin-seven.vercel.app/)
 
 ## 🚀 Demo Credentials
 

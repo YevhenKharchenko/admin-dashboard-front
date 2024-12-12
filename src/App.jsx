@@ -8,6 +8,7 @@ import LoginPage from './pages/LoginPage/LoginPage.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoggedIn } from './redux/auth/selectors.js';
 import { getCurrentUser } from './redux/auth/operations.js';
+import { ToastContainer } from 'react-toastify';
 
 const DashboardPage = lazy(() => import('./pages/DashboardPage/DashboardPage.jsx'));
 const AllOrdersPage = lazy(() => import('./pages/AllOrdersPage/AllOrdersPage.jsx'));
@@ -26,35 +27,38 @@ function App() {
   }, [dispatch, isLoggedIn]);
 
   return (
-    <Routes>
-      <Route
-        path="/login"
-        element={<RestrictedRoute redirectTo="/dashboard" component={<LoginPage />} />}
-      />
-      <Route path="/" element={<SharedLayout />}>
-        <Route index element={<Navigate to="/dashboard" />} />
+    <>
+      <ToastContainer />
+      <Routes>
         <Route
-          path="dashboard"
-          element={<PrivateRoute redirectTo="/login" component={<DashboardPage />} />}
+          path="/login"
+          element={<RestrictedRoute redirectTo="/dashboard" component={<LoginPage />} />}
         />
-        <Route
-          path="orders"
-          element={<PrivateRoute redirectTo="/login" component={<AllOrdersPage />} />}
-        />
-        <Route
-          path="products"
-          element={<PrivateRoute redirectTo="/login" component={<AllProductsPage />} />}
-        />
-        <Route
-          path="suppliers"
-          element={<PrivateRoute redirectTo="/login" component={<AllSuppliersPage />} />}
-        />
-        <Route
-          path="customers"
-          element={<PrivateRoute redirectTo="/login" component={<CustomersDataPage />} />}
-        />
-      </Route>
-    </Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Navigate to="/dashboard" />} />
+          <Route
+            path="dashboard"
+            element={<PrivateRoute redirectTo="/login" component={<DashboardPage />} />}
+          />
+          <Route
+            path="orders"
+            element={<PrivateRoute redirectTo="/login" component={<AllOrdersPage />} />}
+          />
+          <Route
+            path="products"
+            element={<PrivateRoute redirectTo="/login" component={<AllProductsPage />} />}
+          />
+          <Route
+            path="suppliers"
+            element={<PrivateRoute redirectTo="/login" component={<AllSuppliersPage />} />}
+          />
+          <Route
+            path="customers"
+            element={<PrivateRoute redirectTo="/login" component={<CustomersDataPage />} />}
+          />
+        </Route>
+      </Routes>
+    </>
   );
 }
 
